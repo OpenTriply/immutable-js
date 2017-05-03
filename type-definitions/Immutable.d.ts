@@ -2234,8 +2234,8 @@ declare module Immutable {
       (values?: Partial<T> | Iterable<[string, any]>): Instance<T> & Readonly<T>;
       new (values?: Partial<T> | Iterable<[string, any]>): Instance<T> & Readonly<T>;
     }
-
-    export interface Instance<T extends Object> {
+    export type Instance<T extends Object> = InstanceWrapper<T> & Readonly<T>;
+    export interface InstanceWrapper<T extends Object> {
 
       // Reading values
 
